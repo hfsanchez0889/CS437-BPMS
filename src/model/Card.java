@@ -5,13 +5,13 @@ public class Card {
 	private int id;
 	private String name;
 	private String sport;
-	private String team;
+	private int teamId;
 	private double price;
-	private Card(int id,String name,String sport,String team, double price){
+	private Card(int id,String name,String sport,int teamId, double price){
 		this.id=id;
 		this.name=name;
 		this.sport=sport;
-		this.team=team;
+		this.teamId=teamId;
 		this.price=price;
 	}
 	public int getId() {
@@ -32,17 +32,18 @@ public class Card {
 	public void setSport(String sport) {
 		this.sport = sport;
 	}
-	public String getTeam() {
-		return team;
-	}
-	public void setTeam(String team) {
-		this.team = team;
-	}
 	public double getPrice() {
 		return price;
 	}
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	public int getTeamId() {
+		return teamId;
+	}
+	public void setTeamId(int teamId) {
+		this.teamId = teamId;
+	}
+	
 	
 }
