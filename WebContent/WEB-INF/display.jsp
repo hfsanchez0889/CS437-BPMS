@@ -41,8 +41,8 @@
   <th style="text-align:center" bgcolor="#000000">Value</th></tr>
   <tr bgcolor="#bababa">
     <td width="20%"align="center" style="width:150px; height:100px;">
-   <img src="photofolio/images/cardimages/trout.png" align="middle" style="max-height:150%; max-width:150% "/>
-    <br /><a href="photofolio/images/cardimages/trout.png" target="_blank"><p style="color:black; text-align:center"><b>View</b></p></a>
+   <img src="photofolio/images/cardimages/losangelesangels/miketrout.png" align="middle" style="max-height:150%; max-width:150% "/>
+    <br /><a href="photofolio/images/cardimages/losangelesangels/miketrout.png" target="_blank"><p style="color:black; text-align:center"><b>View</b></p></a>
     </td>
      <td width="16%"><p style="font-size:125%; color:black;" align="center"><b> Mike Trout </b></p></td>
      <td width="16%"><p style="font-size:125%; color:black;" align="center"><b>Los Angeles Angels</b></p></td>

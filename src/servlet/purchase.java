@@ -16,13 +16,13 @@ import javax.servlet.http.HttpServletResponse;
 import model.Card;
 import model.Team;
 
-@WebServlet("/Purchase")
-public class Purchase extends javax.servlet.http.HttpServlet implements
+@WebServlet("/purchase")
+public class purchase extends javax.servlet.http.HttpServlet implements
     javax.servlet.Servlet {
 
     private static final long serialVersionUID = 1L;
 
-    public Purchase()
+    public purchase()
     {
         super();
     }
