@@ -52,8 +52,15 @@
      
   </tr>
 </table>
+<br />
+<p>Cash out to sell your cards!!</p>
       <a href="#" class="btn btn-md btn-primary"><b>Cash Out</b></a> &nbsp;&nbsp;
-      <a href="#" class="btn btn-md btn-primary"><b>Finish</b></a>
+    <p><b>OR</b></p>
+    <p>Enter your email to claim your cards!</p>
+    <form action="EmailCardsToUser" method="post">
+Email <input type="text" name="emai" /> <br />
+<input type="submit" name="email" value="Submit" />
+</form>
     <!-- ####################################################################################################### --> 
   </div>
 </div>
