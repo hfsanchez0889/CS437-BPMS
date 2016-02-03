@@ -58,9 +58,9 @@
     <p><b>OR</b></p>
     <p>Enter your email to claim your cards!</p>
     
-<form action="EmailCardsToUser" method="post">
-     Email <input type="text" name="email" /> <br />
-<input type="submit" value="Submit" />
+   <form action="EmailCardsToUser" method="post">
+Email <input type="text" name="email" /> <br />
+<input type="submit" name="submit" value="Submit" />
 </form>
 
     <!-- ####################################################################################################### --> 
