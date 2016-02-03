@@ -1,3 +1,4 @@
+
 package servlet;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Card;
 import model.Team;
 
-@WebServlet("/Purchase")
+@WebServlet("/purchase")
 public class Purchase extends javax.servlet.http.HttpServlet implements
     javax.servlet.Servlet {
 
