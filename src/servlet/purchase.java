@@ -54,7 +54,7 @@ public class purchase extends javax.servlet.http.HttpServlet implements
         int teamId = Integer.parseInt(request.getParameter( "teamId" ));
         Team team = getEach(teamId);
         List<Card> cards = team.getCards();
-        Collections.shuffle(cards);
+        Collections.shuffle(allCards);
         Random r = new Random();
         int randomSection = r.nextInt(20);//0~19 including
         
