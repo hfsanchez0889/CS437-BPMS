@@ -57,10 +57,12 @@
       <a href="#" class="btn btn-md btn-primary"><b>Cash Out</b></a> &nbsp;&nbsp;
     <p><b>OR</b></p>
     <p>Enter your email to claim your cards!</p>
-    <form action="EmailCardsToUser" method="post">
-Email <input type="text" name="emai" /> <br />
-<input type="submit" name="email" value="Submit" />
+    
+<form action="EmailCardsToUser" method="post">
+     Email <input type="text" name="email" /> <br />
+<input type="submit" value="Submit" />
 </form>
+
     <!-- ####################################################################################################### --> 
   </div>
 </div>
