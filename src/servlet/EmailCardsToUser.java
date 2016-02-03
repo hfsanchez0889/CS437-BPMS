@@ -17,7 +17,8 @@ public class EmailCardsToUser extends HttpServlet {
     public EmailCardsToUser() {}
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		String userEmail = request.getParameter("email");
+		System.out.println("User email : " + userEmail);
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("Served at: " + request.getContextPath());
@@ -28,7 +29,7 @@ public class EmailCardsToUser extends HttpServlet {
 
 		    SendGrid.Email email = new SendGrid.Email();
 
-		    email.addTo("hfsanchez89@yahoo.com");
+		    email.addTo(userEmail);
 		    email.setFrom("cs437@bpms.com");
 		    email.setSubject("Email from CS437 project");
 		    email.setText("Here are your cards!");
