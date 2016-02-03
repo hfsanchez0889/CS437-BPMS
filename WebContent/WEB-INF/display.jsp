@@ -60,7 +60,7 @@
 
     <form action="EmailCardsToUser" method="post">
 Email <input type="text" name="email" /> <br />
-<input type="submit" name="submit" value="Submit" />
+<input type="submit" value="Submit" />
 </form>
 
     <!-- ####################################################################################################### --> 
