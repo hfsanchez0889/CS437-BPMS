@@ -6,6 +6,7 @@ public class Team {
 	private int id;
 	private String name;
 	private List<Card> cards;
+	
 	private Team(int id,String name,List<Card> cards){
 		this.id=id;
 		this.name=name;

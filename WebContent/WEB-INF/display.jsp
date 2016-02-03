@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
 <title>Online Breaker Gambling Portal</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/photofolio/layout/styles/layout.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/photofolio/layout/styles/layout.css" type="text/css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 </head>
 

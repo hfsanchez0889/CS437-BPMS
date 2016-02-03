@@ -28,15 +28,15 @@ public class EmailCardsToUser extends HttpServlet {
 
 		    SendGrid.Email email = new SendGrid.Email();
 
-		    email.addTo("hfsanchez0889@gmail.com");
-		    email.setFrom("hfsanchez89@yahoo.com");
+		    email.addTo("hfsanchez89@yahoo.com");
+		    email.setFrom("cs437@bpms.com");
 		    email.setSubject("Email from CS437 project");
-		    email.setText("Email body");
+		    email.setText("Here are your cards!");
 		    
 	    	sendgrid.send(email);
 	    	
 	    }catch(Exception e){
-	    	out.println(e.getMessage());
+	    		out.println(e.getMessage());
 	    }
 	    
 	

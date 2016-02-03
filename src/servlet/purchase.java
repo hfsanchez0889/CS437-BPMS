@@ -66,7 +66,7 @@ public class Purchase extends javax.servlet.http.HttpServlet implements
         	}
         }
         context.setAttribute("winingCards", winingCards); 
-        request.getRequestDispatcher("/WEB-INF/Display.jsp").forward(request, response);  
+        request.getRequestDispatcher("/WEB-INF/display.jsp").forward(request, response);  
     }
 
     protected void doPost( HttpServletRequest request,
