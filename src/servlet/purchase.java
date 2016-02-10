@@ -2,11 +2,10 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-import java.util.Random;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -18,12 +17,12 @@ import model.Card;
 import model.Team;
 
 @WebServlet("/purchase")
-public class Purchase extends javax.servlet.http.HttpServlet implements
+public class purchase extends javax.servlet.http.HttpServlet implements
     javax.servlet.Servlet {
 
     private static final long serialVersionUID = 1L;
 
-    public Purchase()
+    public purchase()
     {
         super();
     }
