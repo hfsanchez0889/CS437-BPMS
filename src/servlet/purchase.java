@@ -30,8 +30,8 @@ public class purchase extends javax.servlet.http.HttpServlet implements
     public static int countCard=200;
     public static int countSection=20;
     
-    @SuppressWarnings("unused")
-	private Team getEach( int id )
+    
+    private Team getEach( int id )
     {
         @SuppressWarnings("unchecked")
 		List<Team> teams = (List<Team>) getServletContext().getAttribute(
@@ -54,16 +54,21 @@ public class purchase extends javax.servlet.http.HttpServlet implements
         int teamId = Integer.parseInt(request.getParameter( "teamId" ));
         Team team = getEach(teamId);
         List<Card> cards = team.getCards();
-        Collections.shuffle(cards);
+        Collections.shuffle(allCards);
         Random r = new Random();
-        int randomSection = r.nextInt(20);//0~19 including
+        int randomSection = r.nextInt(countSection);//0~19 including
         
         List<Card> winingCards= new ArrayList<Card>();
 
         for(int i=0;i<countCard/countSection;i++){
-        	if(cards.contains( allCards.get(randomSection*countCard/countSection+i) )){  
-        		winingCards.add(allCards.get(randomSection*countCard/countSection+i));
+        	for(int j=0;j<cards.size();j++){
+        		if(cards.get(j).getId()==allCards.get(randomSection*countCard/countSection+i).getId()){
+            		winingCards.add(allCards.get(randomSection*countCard/countSection+i));
+        		}
         	}
+//        	if(cards.contains( allCards.get(randomSection*countCard/countSection+i) )){  
+//        		winingCards.add(allCards.get(randomSection*countCard/countSection+i));
+//        	}
         }
         context.setAttribute("winingCards", winingCards); 
         request.getRequestDispatcher("/WEB-INF/display.jsp").forward(request, response);  
@@ -73,19 +78,6 @@ public class purchase extends javax.servlet.http.HttpServlet implements
         HttpServletResponse response ) throws ServletException, IOException
     {
         doGet( request, response );
-//        List<GuestBookEntry> entries = (List<GuestBookEntry>) getServletContext()
-//                .getAttribute( "entries" );
-//
-//            String name = request.getParameter( "name" );
-//            if( name == null )
-//                name = (String) request.getSession().getAttribute( "name" );
-//            else
-//                request.getSession().setAttribute( "name", name );
-//
-//            entries
-//                .add( new GuestBookEntry( name, request.getParameter( "comment" ) ) );
-//
-//            response.sendRedirect( "GuestBook" );
     }
 
 }

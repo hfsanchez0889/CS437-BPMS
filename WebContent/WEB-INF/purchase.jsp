@@ -5,19 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
-<title>Purchase Page</title>
+<title>Team Selection Page</title>
 </head>
 <body id = "top">
 <form action="Purchase" method="post">
-		Enter First Name : <input type="text" name="firstName"> <BR>
-		Enter Last Name :  <input type="text" name="lastName"> <BR>
-		
-	<select name="teams">
-    <option value="dodgers">Los Angeles Dodgers</option>
-    <option value="angels">Los Angeles Angels</option>
-    <option value="mets">New York Mets</option>
-    <option value="rays">Tampa Bay Rays</option>
-  </select>
+	Team Selection
+	<select name="teamID">
+		<c:forEach var="team" items = "${teams}">
+   			<option> <c:out value = "${team.name}"/></option>
+		</c:forEach>
+	</select>
 		<input type="submit" />
 	</form>
 </body>
