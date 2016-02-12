@@ -32,16 +32,18 @@ public class CashOut extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
-		
+		 JFrame parent = new JFrame();
+		 int total = 0;
 		String[] player =request.getParameterValues("player");
 		for(String s: player){
-			 JFrame parent = new JFrame();
-			 int total = 0;
+		
 			 total = Integer.parseInt(total+s);
-			 JOptionPane.showMessageDialog(parent, "You Cashed Out"+s);
+			
 	    }
 			
-			
+		 JOptionPane.showMessageDialog(parent, "You Cashed Out with: "+total);
+		 request.getRequestDispatcher( "/WEB-INF/photofolio/index.html" ).forward(
+		         request, response );
 		}
 	}
 
