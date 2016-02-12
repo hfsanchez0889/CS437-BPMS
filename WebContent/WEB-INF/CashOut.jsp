@@ -35,7 +35,7 @@
 
 <c:forEach items="${winingCards}" var="entry">
 <form action="demo_form.asp" method="get">
-<input type="checkbox" name="player" value="price"> ${entry.price}<br>
+<input type="checkbox" name="player" value="${entry.price}"> ${entry.name}${entry.price}<br>
 <input type="submit" value="Submit">
 </form>
 
