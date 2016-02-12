@@ -54,14 +54,17 @@
   </c:forEach>
 </table>
 <br />
+
 <p>Cash out to sell your cards!!</p>
-      <a href="#" class="btn btn-md btn-primary"><b>Cash Out</b></a> &nbsp;&nbsp;
+      <a href="http://localhost:8080/CS437-BPMS/photofolio/index.html" class="btn btn-md btn-primary"><b>Cash Out</b></a> &nbsp;&nbsp;
    <p><b>OR</b></p>
    <p>Enter your email to claim your cards!</p>
     <form action="EmailCardsToUser" method="post">
 	Email <input type="text" name="email" /> <br />
 	<input type="submit" name="submit" value="Submit" />
 </form>
+<br />
+ <font size="50px"><a href="http://localhost:8080/CS437-BPMS/photofolio/index.html"  class="btn btn-lg btn-danger">FINISH</a></font>
 
     <!-- ####################################################################################################### --> 
   </div>
