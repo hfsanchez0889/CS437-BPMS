@@ -34,33 +34,45 @@
   <div id="container" class="clear"> 
     <!-- ####################################################################################################### -->
    <table width="100%"style="border:5px double black;">
-<c:forEach items="${winingCards}" var="entry">
-  <tr><th style="text-align:center" bgcolor="#000000">Card </th>
-  <th style="text-align:center" bgcolor="#000000">Player</th><th style="text-align:center" bgcolor="#000000">Team</th>
-  <th style="text-align:center" bgcolor="#000000">Product</th><th style="text-align:center" bgcolor="#000000">Sport</th>
-  <th style="text-align:center" bgcolor="#000000">Value</th></tr>
-  <tr bgcolor="#bababa">
-    <td width="20%"align="center" style="width:150px; height:100px;">
-   <img src="photofolio/images/cardimages/losangelesangels/miketrout.png" align="middle" style="max-height:150%; max-width:150% "/>
-    <br /><a href="photofolio/images/cardimages/losangelesangels/miketrout.png" target="_blank"><p style="color:black; text-align:center"><b>View</b></p></a>
-    </td>
-     <td width="16%"><p style="font-size:125%; color:black;" align="center"><b> {entry.name} </b></p></td>
-     <td width="16%"><p style="font-size:125%; color:black;" align="center"><b>Los Angeles Angels</b></p></td>
-     <td width="16%"><p style="font-size:125%; color:black;" align="center"><b>2014 National Treasures</b></p></td>
-     <td width="16%"><p style="font-size:125%; color:black;" align="center"><b>Sport</b></p></td>
-     <td width="8%"><p style="font-size:125%; color:black;" align="center"><b>150$</b></p></td>
-     
-  </tr>
-  </c:forEach>
+   
+	<c:choose>
+	   <c:when test="${winingCards.size()<1}">
+	   <h2>Sorry,U didn't win anything!</h2>
+	   </c:when>
+	   <c:otherwise>
+	       <h2>Congratulations! U have won the following cards:</h2>
+		   <c:forEach items="${winingCards}" var="entry">
+			  <tr><th style="text-align:center" bgcolor="#000000">Card </th>
+			  <th style="text-align:center" bgcolor="#000000">Player</th><th style="text-align:center" bgcolor="#000000">Team</th>
+			  <th style="text-align:center" bgcolor="#000000">Product</th><th style="text-align:center" bgcolor="#000000">Sport</th>
+			  <th style="text-align:center" bgcolor="#000000">Worth Value</th></tr>
+			  
+			  <tr bgcolor="#bababa">
+			    <td width="20%"align="center" style="width:150px; height:100px;">
+			   <img src="photofolio/images/cardimages/clevelandindians/${entry.name}.png" align="middle" style="max-height:150%; max-width:150% "/>
+			    <br /><a href="photofolio/images/cardimages/clevelandindians/${entry.name}.png" target="_blank"><p style="color:black; text-align:center"><b>View</b></p></a>
+			    </td>
+			     <td width="16%"><p style="font-size:125%; color:black;" align="center"><b> ${entry.name} </b></p></td>
+			     <td width="16%"><p style="font-size:125%; color:black;" align="center"><b>${entry.teamId}</b></p></td>
+			     <td width="16%"><p style="font-size:125%; color:black;" align="center"><b>2014 National Treasures</b></p></td>
+			     <td width="16%"><p style="font-size:125%; color:black;" align="center"><b>${entry.sport}</b></p></td>
+			     <td width="8%"><p style="font-size:125%; color:black;" align="center"><b>${entry.price}</b></p></td>     
+			  </tr>	  
+	       </c:forEach>
+	   </c:otherwise>
+	</c:choose>
+
+
 </table>
 <br />
 <p>Cash out to sell your cards!!</p>
       <a href="#" class="btn btn-md btn-primary"><b>Cash Out</b></a> &nbsp;&nbsp;
-   <p><b>OR</b></p>
-   <p>Enter your email to claim your cards!</p>
+    <p><b>OR</b></p>
+    <p>Enter your email to claim your cards!</p>
+
     <form action="EmailCardsToUser" method="post">
-	Email <input type="text" name="email" /> <br />
-	<input type="submit" name="submit" value="Submit" />
+Email <input type="text" name="email" /> <br />
+<input type="submit" value="Submit" />
 </form>
 
     <!-- ####################################################################################################### --> 
