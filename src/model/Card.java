@@ -8,7 +8,7 @@ public class Card {
 	private int teamId;
 	private double price;
 	
-	private Card(int id,String name,String sport,int teamId, double price){
+	public Card(int id,String name,String sport,int teamId, double price){
 		this.id=id;
 		this.name=name;
 		this.sport=sport;

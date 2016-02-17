@@ -7,7 +7,7 @@ public class Team {
 	private String name;
 	private List<Card> cards;
 	
-	private Team(int id,String name,List<Card> cards){
+	public Team(int id,String name,List<Card> cards){
 		this.id=id;
 		this.name=name;
 		this.cards= cards;
