@@ -24,7 +24,6 @@ public class TeamSelection extends HttpServlet {
         @SuppressWarnings("unchecked")
 		List<Sport> sports = (List<Sport>) getServletContext().getAttribute(
             "sports" );
-
         for( Sport each : sports )
             if( each.getId()==( id ) ) 
             	return each;
@@ -33,7 +32,6 @@ public class TeamSelection extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	ServletContext context = getServletContext(); 
-    	
         int sportId = Integer.parseInt(request.getParameter( "sportId" ));
         Sport sport = getEach(sportId);
         
