@@ -31,6 +31,7 @@
      <h1 style="color:black; ">Check the cards you would like to sell</h1> 
     </div>
     <div style="text-align:center"> 
+<<<<<<< HEAD
 <form name="CashOut.jsp" method="post">
 	<table>   
 	    
@@ -54,6 +55,35 @@
 	 &nbsp;
 <form method="LINK" action="http://localhost:8080/bpms/photofolio/index.html">	    
 	<input type="submit" value="End your break">
+=======
+
+
+
+
+  <form name="CashOut.jsp" method="post">
+<table>   
+    <c:forEach var="entry" items="${winingCards}">
+    	<tr>  
+    	  	<td>
+    	  		<input type="checkbox" name="cardvalue" value="${entry.price}"><h1>PRICE<h1>${entry.price}$</h1><br><img src="photofolio/images/cardimages/clevelandindians/${entry.name}.png" align="middle" style="max-height:25%; max-width:25% "/>
+    	  	</td>	
+    		</tr>		
+    </c:forEach>     
+</table>
+<table>
+	<tr>
+		<td>
+			<input type="submit" value="Sell your cards"/>
+		</td>
+	</tr>
+</table>
+</form>
+ &nbsp;
+ &nbsp;
+    <form method="LINK" action="Homepage">
+    
+<input type="submit" value="End your break">
+>>>>>>> origin/master
 </form>
    </div>
     <!-- ####################################################################################################### --> 

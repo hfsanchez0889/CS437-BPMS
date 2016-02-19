@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import model.Card;
+import model.Sport;
 
 
 @WebServlet("/CashOut")
@@ -21,16 +22,24 @@ public class CashOut extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	List<Card> winingCards= new ArrayList<Card>();
+	 private int hitCount;
+	  public void init() 
+	  { 
+	   
+	     hitCount++;
+
+	  } 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		 request.getRequestDispatcher( "/WEB-INF/CashOut.jsp" ).forward(
 		         request, response );
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
 	}
 
 	
+<<<<<<< HEAD
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 ////		doGet(request, response);
 //    	ServletContext context = getServletContext();
@@ -68,6 +77,36 @@ public class CashOut extends HttpServlet {
 //				JOptionPane.showMessageDialog(parent, "You already sold that card");			
 			}
 			
+=======
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	hitCount++;	
+		doGet(request, response);
+	System.out.println(hitCount);
+	
+		
+		 JFrame parent = new JFrame();
+		 double sumTotal = 0;
+		 
+		String[] items =request.getParameterValues("cardvalue");
+		if(items==null){
+			 JOptionPane.showMessageDialog(parent, "You selected nothing");
+			
+		}else if (hitCount<=2){
+		for(String item : items){
+		
+			sumTotal += Double.parseDouble(item);
+			
+	    }
+		 JOptionPane.showMessageDialog(parent, "You Cashed Out with: "+sumTotal+"$");
+		}
+		else{
+			JOptionPane.showMessageDialog(parent, "You already sold that card");
+			//hitCount=0;
+			
+		}
+		
+		}
+>>>>>>> origin/master
 	}
 }
 
