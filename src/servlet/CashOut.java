@@ -39,7 +39,7 @@ public class CashOut extends HttpServlet {
 	}
 
 	
-<<<<<<< HEAD
+
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 ////		doGet(request, response);
 //    	ServletContext context = getServletContext();
@@ -77,36 +77,6 @@ public class CashOut extends HttpServlet {
 //				JOptionPane.showMessageDialog(parent, "You already sold that card");			
 			}
 			
-=======
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	hitCount++;	
-		doGet(request, response);
-	System.out.println(hitCount);
-	
-		
-		 JFrame parent = new JFrame();
-		 double sumTotal = 0;
-		 
-		String[] items =request.getParameterValues("cardvalue");
-		if(items==null){
-			 JOptionPane.showMessageDialog(parent, "You selected nothing");
-			
-		}else if (hitCount<=2){
-		for(String item : items){
-		
-			sumTotal += Double.parseDouble(item);
-			
-	    }
-		 JOptionPane.showMessageDialog(parent, "You Cashed Out with: "+sumTotal+"$");
-		}
-		else{
-			JOptionPane.showMessageDialog(parent, "You already sold that card");
-			//hitCount=0;
-			
-		}
-		
-		}
->>>>>>> origin/master
 	}
 }
 

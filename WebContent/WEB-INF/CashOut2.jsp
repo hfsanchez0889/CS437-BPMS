@@ -29,8 +29,10 @@
         <h1 style="color:black; ">You Cashed Out with: ${sumTotal} $ </h1> 
    </div>
    <div style="text-align:center"> 
-<a href="/bpms/Homepage" class="btn btn-md btn-primary"><b>Cash Out</b></a> &nbsp;&nbsp;  
-
+<form method="LINK" action="Homepage">
+    
+<input type="submit" value="End your break">
+</form>
 <!-- ####################################################################################################### -->
 <div class="wrapper">
   <div id="copyright" class="clear">
