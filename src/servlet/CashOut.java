@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,20 +31,43 @@ public class CashOut extends HttpServlet {
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-		 JFrame parent = new JFrame();
-		 int total = 0;
-		String[] player =request.getParameterValues("player");
-		for(String s: player){
-		
-			 total = Integer.parseInt(total+s);
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+////		doGet(request, response);
+//    	ServletContext context = getServletContext();
+//    	List<Card> winingCards = (List<Card>) context.getAttribute("winingCards");
+//		 JFrame parent = new JFrame();
+//		 double total = 0;
+//		for(Card s: winingCards){
+//		
+//			 total = s.getPrice();
+//			
+//	    }
+//			
+//		 JOptionPane.showMessageDialog(parent, "You Cashed Out with: "+total);
+//		 request.getRequestDispatcher( "/homepage.html" ).forward(
+//		         request, response );
+//		}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+    	ServletContext context = getServletContext(); 
+
+			 JFrame parent = new JFrame();
+			 double sumTotal = 0;
+			 
+			String[] items =request.getParameterValues("cardvalue");
+			if(items==null){
+				 JOptionPane.showMessageDialog(parent, "You selected nothing");
+				
+			}
+			else{
+				for(String item : items){					
+					sumTotal += Double.parseDouble(item);					
+			    }
+		        context.setAttribute("sumTotal", sumTotal); 
+		        request.getRequestDispatcher("/WEB-INF/CashOut2.jsp").forward(request, response);		        
+//				JOptionPane.showMessageDialog(parent, "You Cashed Out with: "+sumTotal+"$");				 
+//				JOptionPane.showMessageDialog(parent, "You already sold that card");			
+			}
 			
-	    }
-			
-		 JOptionPane.showMessageDialog(parent, "You Cashed Out with: "+total);
-		 request.getRequestDispatcher( "/WEB-INF/photofolio/index.html" ).forward(
-		         request, response );
-		}
 	}
+}
 
