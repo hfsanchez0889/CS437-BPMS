@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,22 +28,37 @@
     <!-- ####################################################################################################### -->
     <div style="text-align:center"> 
 
-     <h1 style="color:black; ">cash out and sell you cards!!!!</h1> 
+     <h1 style="color:black; ">Check the cards you would like to sell</h1> 
     </div>
     <div style="text-align:center"> 
 
 
 
-<c:forEach items="${winingCards}" var="entry">
-<form action="demo_form.asp" method="get">
-<input type="checkbox" name="player" value="${entry.price}"> ${entry.name}${entry.price}<br>
-<input type="submit" value="Submit">
+
+  <form name="CashOut.jsp" method="post">
+<table>   
+    <c:forEach var="entry" items="${winingCards}">
+    	<tr>  
+    	  	<td>
+    	  		<input type="checkbox" name="cardvalue" value="${entry.price}"><h1>PRICE<h1>${entry.price}$</h1><br><img src="photofolio/images/cardimages/clevelandindians/${entry.name}.png" align="middle" style="max-height:25%; max-width:25% "/>
+    	  	</td>	
+    		</tr>		
+    </c:forEach>     
+</table>
+<table>
+	<tr>
+		<td>
+			<input type="submit" value="Sell your cards"/>
+		</td>
+	</tr>
+</table>
 </form>
-
- </c:forEach>
- 
- 
-
+ &nbsp;
+ &nbsp;
+    <form method="LINK" action="Homepage">
+    
+<input type="submit" value="End your break">
+</form>
    </div>
     <!-- ####################################################################################################### --> 
   </div>

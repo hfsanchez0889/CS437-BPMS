@@ -66,7 +66,7 @@
 </table>
 <br />
 <p>Cash out to sell your cards!!</p>
-      <a href="#" class="btn btn-md btn-primary"><b>Cash Out</b></a> &nbsp;&nbsp;
+      <a href="/CS437-BPMS/CashOut" class="btn btn-md btn-primary"><b>Cash Out</b></a> &nbsp;&nbsp;
     <p><b>OR</b></p>
     <p>Enter your email to claim your cards!</p>
 
