@@ -79,7 +79,7 @@
 		Please select your team.<br>
 		Team:
 		<select name="teamID">
-			<c:forEach var="team" items = "${teams}">
+			<c:forEach var="team" items = "${selectableTeams}">
 	   			<option> <c:out value = "${team.id}"/>${team.name}</option>
 			</c:forEach>
 		</select><br>
